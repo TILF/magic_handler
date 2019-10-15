@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/magic.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+
 	<title>Bitch</title>
 </head>
 <body>
 	<div>
-		<h1>Magic_handler</h1>
+		<h1 id="titre1" class="titre">Magic_handler</h1>
 	</div>
-	<div>
+	<div id="content">
 		<div>
 
 			<div>
@@ -15,20 +20,20 @@
 			</div>
 			<div>
 				<label>identifiant</label>
-				<input type="text" name="identifiant">
+				<input type="text"  class="form-control" name="identifiant">
 			</div>
 
 			<div>
 				<label>mot de passe</label>
-				<input type="password" name="password">
+				<input type="password"  class="form-control" name="password">
 			</div>
 
 			<div>
-				<input type="checkbox" name="Rememberme"> Remember me
+				<input type="checkbox"  name="Rememberme"> Remember me
 			</div>
 
-			<div> 
-				<button>Valider</button>
+			<div class="center"> 
+				<button class="btn btn-success"><i class="fas fa-plus"></i>Valider</button>
 			</div>
 
 			<div>

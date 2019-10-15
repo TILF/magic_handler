@@ -1,0 +1,11 @@
+#content{
+	width: 70%;
+	max-width: 700px;
+	margin : 0 auto;
+	border: solid 1px #000;
+	padding: 1em;
+}
+
+.center{
+	text-align: center;
+}
