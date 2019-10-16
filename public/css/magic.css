@@ -1,21 +1,42 @@
-#content{
-	width: 70%;
-	max-width: 700px;
-	margin : 0 auto;
-	border: solid 2px #000;
-	padding: 1em;
-	text-align: center;
-	color: white;
-	background-color: rgba(0, 0, 0, 0.5);
-	
+/*---------------------- Generique ------------------------------*/
+
+body, html{
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	overflow: hidden;
 }
+
 body {
 	background-image: url(https://image.noelshack.com/fichiers/2019/42/3/1571219210-1-hhncwcrqdst-s5wfrkqq.jpeg);
 	background-repeat: no-repeat;
 	background-position: bottom;
 }
+
 .center{
 	text-align: center;
+}
+
+/* ----------------------- Page Login --------------------------- */
+
+#content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+#bloc_login{
+	width: 70%;
+	max-width: 600px;
+	margin : -10em auto 0 auto;
+	border: solid 2px #000;
+	padding: 1em;
+	text-align: center;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	vertical-align: middle;
+	
 }
 
 #titre1{
@@ -28,4 +49,8 @@ body {
 	width: 70%
 	max-width: 700px;
 	line-height: 10px;
+}
+
+.form-bloc{
+	margin-top: 1em;
 }
