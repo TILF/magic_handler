@@ -1,0 +1,58 @@
+body{
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	overflow: hidden;
+	background-image: url(https://image.noelshack.com/fichiers/2019/42/4/1571335374-12-121139-magic-the-gathering-arena.jpg);
+}
+
+label {
+  display:block;
+  width:150px;
+  text-align:right;
+  padding:0 5px 0 0
+}
+
+#content{
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	height: 100%;
+	width: 80%;
+}
+ /* Titre inscription */
+#Ins{
+	color: white;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border-radius: 5px 5px 50px 50px; 
+	width: 70%
+	max-width: 700px;
+	line-height: 10px;
+}
+
+#bloc_login{
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border-radius: 50px 50px 5px 5px; 
+	width: 70%
+	max-width: 600px;
+	line-height: 20px;
+}
+
+
+
+#back{
+	float: right;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+#valider{
+	margin: 10px;
+
+}

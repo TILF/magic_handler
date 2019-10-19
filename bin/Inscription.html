@@ -2,35 +2,82 @@
 <html>
 <head>
 	<title>Inscription Membres</title>
+	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/inscription.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-
-	<div>
+<!-- Bloc inscription -->
+	<div id="content">
 		<div> 
-			<h1>Inscription</h1>
+			<h1 id="Ins">Inscription</h1>
 		</div>
 
-		<div>
-			<label>Nom</label>
-			<input type="text" class="form-control" name="Nom">
+		<form id="bloc_login">
+		
+			<div id="ins1">
+				<label>Nom</label>
+				<input type="text" class="Nom" name="Nom">
+			</div>
+
+			<div id="ins2">
+				<label>Prénom</label>
+				<input type="text" class="prenom" name="Prénom">
+			</div>
+
+			<div id="ins3">
+				<label>Date de naissance</label>
+				<input type="Date" class="Anniversaire" name="Anniversaire">
+			</div>
+
+			<div id="ins4">
+				<label>Adresse</label>
+				<input type="text" name="adresse">
+			</div>
+
+			<div id="ins5">
+				<label>Code postal</label>
+				<input type="text" class="postal" name="Code postal">
+			</div>
+
+			<div id="ins6">
+				<label>Ville</label>
+				<input type="text" class="Ville" name="Ville">
+			</div>
+
+			<div id="ins7">
+				<label>Adresse email</label>
+				<input type="text" name="adresse mail">
+			</div>
+
+			<div id="ins8">
+				<label>Pseudo</label>
+				<input type="text" name="Pseudo">
+			</div>
+
+			<div id="ins9">
+				<label>Mot de passe</label>
+				<input type="password" class="mdp" name="password">
+			</div>
+
+			<div id="ins10">
+				<label>Confirmer le mot de passe</label>
+				<input type="password" class="Confirmermdp" name="password">
+
+			<div id=valider>
+				<button class="btn btn-light">S'inscrire</button>
+			</div>
+
+		</form>
+
+		<div id=back>
+			<a href="../index.html">
+			<button class="btn btn-outline-light">Retour</button>
+			</a>
+			
 		</div>
 
-		<div>
-			<label>Prénom</label>
-			<input type="text" class="form-control" name="Prénom">
-		</div>
-
-		<div>
-			<label>Date de naissance</label>
-			<input type="Date" class="naissance" name="Date de naissance">
-		</div>
-	</div>
-
-	<div>
-		<div>
-			<h2>Adresse</h2>
-		</div>
 	</div>
 
 </body>
