@@ -38,9 +38,11 @@ label {
 	background-color: rgba(0, 0, 0, 0.5);
 	padding-top: 50px;
 	padding-bottom: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
 	border-radius: 50px 50px 5px 5px; 
-	width: 70%;
-	max-width: 700px;
+	width: 80%;
+	max-width: 1000px;
 	line-height: 20px;
 	margin: 0 auto;
 }
@@ -53,5 +55,4 @@ label {
 
 #valider{
 	margin: 10px;
-
 }
