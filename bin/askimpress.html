@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/impress.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset="UTF-8"/>
+</head>
+<body>
+	<h1>Demande d'impression</h1>
+
+	<div>
+		<div>
+	<!-- Espace Inscrits -->
+		<div id="user">
+			<ul id="menu-accordeon">
+   				<li><a href="#">Ev&eacute;nements</a>
+     				 <ul>
+         				<li><a href="#">Ev&eacute;nements &eacute; venir</a></li>
+         				<li><a href="#">Tournois</a></li>
+         				<li><a href="#">Mes participations</a></li>
+      				</ul>
+   				</li>
+
+    			<li><a href="#">Impressions</a>
+      				<ul>
+         				<li><a href="./askimpress">Demander une impression</a></li>
+         				<li><a href="./impressOn">Impressions en cours</a></li>
+         				<li><a href="./impressH">Historique des impressions</a></li>
+      				</ul>
+   				</li>
+
+   				<li><a href="#">Mes decks</a>
+      				<ul>
+         				<li><a href="#">Importer un deck</a></li>
+         				<li><a href="#">G&eacute;rer les decks</a></li>
+         				<li><a href="#">Discussion decks</a></li>
+      				</ul>
+   				</li>
+			</ul>
+		</div>
+
+	<!-- Partie Administrateur -->
+		<div id="Admin">
+			<div>
+				<button id="Bad"><a href="./Gestion_event">G&eacute;rer les &eacute;v&eacute;nements</a></button>
+			</div>
+
+			<div>
+				<button id="Bad"><a href="./Gestion_impressions">G&eacute;rer les impressions</a></button>
+			</div>
+
+			<div>
+				<button id="Bad"><a href="./Gestion_actus">G&eacute;rer les actualit&eacute;s</a></button>
+			</div>
+		</div>
+
+	<!-- Accès aux compte utilisateur -->
+	<div id="account">
+		<ul id="menu-accordeon">
+				<li><a href="#">Mon Compte</a>
+					<ul>
+						<li><a href="#">Mes donn&eacute;es personnelles</a></li>
+						<li><a href="#">Mes param&eacute;tres</a></li>
+						<li><a href="#">Mes messages</a></li>
+						<li><a href="#">D&eacute;connexion</a></li>
+					</ul>
+				</li>
+		</ul>
+	</div>
+
+<!-- Formulaire de demande d'impression -->
+	<div id="askI">
+		<form class="form-inline">
+  			<div class="form-group">
+    			<label for="card">Carte</label>
+    			<input type="card" class="form-control" id="name">
+ 			</div>
+
+ 			<div class="select">
+ 				<select name="Edition" size="1">
+ 					<option>Eight Edition</option>
+ 					<option>Mirrodin</option>
+ 					<option>Darksteel</option>
+ 					<option>Fifth Dawn</option>
+ 					<option>Champions of Kamigawa</option>
+ 					<option>Unhinged</option>
+ 					<option>Betrayers of Kamigawa</option>
+ 					<option>Saviors of Kamigawa</option>
+ 					<option>Ninth Edition</option>
+ 					<option>Ravnica: City of Guilds</option>
+ 					<option>Guildpact</option>
+ 					<option>Dissension</option>
+ 				</select>
+ 			</div>
+
+ 			<div class="select">
+ 				<select name="Quantité" size="1">
+ 					<option>1</option>
+ 					<option>2</option>
+ 					<option>3</option>
+ 					<option>4</option>
+ 				</select>
+ 			</div>
+
+  			<div>
+  				<button type="Ajouter" class="btn btn-primary" id="btn">Ajouter</button>
+  			</div>
+		</form>
+	</div>
+
+<!-- Cette partie serait les demandes qui viennent d'être réalisée pour les modifier si besoin dans les 15min -->
+	<div></div>
+
+
+</body>
+</html>
