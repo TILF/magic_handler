@@ -1,4 +1,4 @@
-
+/* Partie boutons user */
 
 #user {
   background-color: rgba(0,0,0,0.5);
@@ -20,6 +20,8 @@
   top: 60px;
 }
 
+/* Partie compte */
+
 #account {
 	background-color: rgba(0,0,0,0.5);
 	border-radius: 50px 5px 5px 50px;
@@ -30,7 +32,7 @@
 	top: 20%;
 }
 
-
+/* Un accordéon pour les gouverner tous! */
 
 #menu-accordeon {
   padding:0;
@@ -130,6 +132,8 @@
   left: 275px;
 }
 
+/* le titre */
+
 h1 {
   text-align: center;
   background-color: rgba(0,0,0,0.5);
@@ -146,13 +150,27 @@ h1 {
 
   body {
   background-image: url(https://image.noelshack.com/fichiers/2019/44/2/1572360403-book-wallpapers-28442-3045404.jpg);
-  background-repeat: no-repeat;
+  background-repeat: no-repeat center fixed;
+  background-size: cover;
   margin: auto;
   height: 100%;
   width:100%;
   overflow: hidden;
   flex-direction: column;
 }
+
+/* les contours swag autour des champs de selection */
+
+#askI2 {
+  border: solid 2px;
+  border-color: #fff;
+  border-radius: 50px 50px 50px 50px;
+  background-color: #808080;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+/* le truc que je veux faire au milieu de la page */
 
 #askI {
   position: absolute;
@@ -166,6 +184,8 @@ h1 {
   padding-left: 20px;
   color: white;
 }
+
+/* le bouton ajouter */
 
 #btn {
   background-color: #729EBF;

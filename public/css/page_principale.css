@@ -47,7 +47,7 @@ h1 {
 	top: 60px;
 }
 
-/* Patie actualités */
+/* Partie actualités */
 
 #actus {
 	text-align: center;
@@ -62,6 +62,8 @@ h1 {
 	bottom: 300px;
 	left: 275px;
 }
+
+/* Partie compte */
 
 #account {
 	background-color: rgba(0,0,0,0.5);
