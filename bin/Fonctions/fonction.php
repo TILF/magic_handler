@@ -10,7 +10,7 @@
          <link rel=\"stylesheet\" type=\"text/css\" href=\"../public/css/bootstrap.min.css\">
          <link rel=\"stylesheet\" type=\"text/css\" href=\"../public/css/page_principale.css\">
          <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
-         <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">*
+         <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
       </head>
 
       <body>
@@ -92,9 +92,59 @@
 
 
 
-   /* ###################################################################################################################
-                                       Fonctions de connexion à la base de données
-   ###################################################################################################################### */
+/*################################################################################
+                  Fonctions de traitement des données entrée/sorties
+##################################################################################*/
+
+/** 
+ *  Protection des sorties (code HTML généré à destination du client).
+ *
+ *  Fonction à appeler pour toutes les chaines provenant de :
+ *      - de saisies de l'utilisateur (formulaires)
+ *      - de la bdD
+ *  Permet de se protéger contre les attaques XSS (Cross site scripting)
+ *  Convertit tous les caractères éligibles en entités HTML, notamment :
+ *      - les caractères ayant une signification spéciales en HTML (<, >, ...)
+ *      - les caractères accentués
+ *
+ *  @param  string  $text   la chaine à protéger    
+ *  @return string  la chaîne protégée
+ */
+function entities_protect($str) {
+    $str = trim($str);
+    return htmlentities($str, ENT_QUOTES, 'UTF-8');
+}
+
+//____________________________________________________________________________
+/**
+ * Protection des chaînes avant insertion dans une requête SQL
+ *
+ * Avant insertion dans une requête SQL, toutes les chaines contenant certains caractères spéciaux (", ', ...) 
+ * doivent être protégées. En particulier, toutes les chaînes provenant de saisies de l'utilisateur doivent l'être. 
+ * Echappe les caractères spéciaux d'une chaîne (en particulier les guillemets) 
+ * Permet de se protéger contre les attaques de type injections SQL
+ *
+ * @param   objet       $bd     La connexion à la base de données
+ * @param   string      $str    La chaîne à protéger
+ * @return  string              La chaîne protégée
+ */
+function bd_protect($bd, $str) {
+    $str = trim($str);
+    return mysqli_real_escape_string($bd, $str);
+}
+
+//____________________________________________________________________________
+/**
+ * Redirection de l'utilisateur vers une page donnée
+ *
+ * @param   String  $destination    Adresse de destination
+ *
+ * @return  void
+ */
+function redirection($destination){
+    header('location: '.$destination);
+    exit();
+}
 
    
 ?>

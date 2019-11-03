@@ -1,5 +1,8 @@
 <?php 
-	include('fonction.php');
+
+	// A inclure dans toutes les pages
+	include('Fonctions/fonction.php');
+	include('Fonctions/dataBaseAccess.php');
 
 	/* Vérifie si la personne est connectée */
 	if(is_loged()){
