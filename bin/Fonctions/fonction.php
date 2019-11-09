@@ -67,57 +67,24 @@
       echo "</body></html>";
    }
 
-   function connexion(){
 
-    $identifiant = Admin;
-    $password = Admin;
+   /* TODO : completer la fonction pour qu'lle fonctionne */
+   function connexion2(){
 
-   if (!empty($_POST['connexion'])) {
+      //Etape 1, vérifier que les informations saisies dans le formulaire sont bien présente dans $_POST, sinon il y a erreur et on revient à l'écran de connexion
+      //Cette vérification empêche une personne d'accéder à la page en tapant l'adresse URL directement.
+      if()
+        redirection('deconnexion.php');
 
-        $identifiant = $_POST['identifiant'];
-        $password = $_POST['password'];
-        
+      //Sinon, on vérifie que les identifiants soient corrects (pour le moment on dit que c'est 'admin' 'admin')
+      // Si ce n'est pas le cas on retourne à la connexion
+      // Pour le moment on ne gère pas le message d'erreur
+      if()
+        redirection('deconnexion.php');
 
-      if(empty($_POST['identifiant'] || $_POST['password']))
-      {
-
-        echo "Pseudo manquant ou mot de passe manquant !";
-        header("location : /connexion.php");
-        exit;
-      }
-
-      else if (isset($_POST['identifiant']) && isset($_POST['password'])) 
-        {
-        
-          $identifiant === $_POST['identifiant'];
-          $password === $_POST['password'];
-
-        session_start();
-         
-          $_SESSION['identifiant'] = $_POST['identifiant'];
-          $_SESSION['password'] = $_POST['password'];
-          $_SESSION['ouvert'] = true;
-          header("location : /page_principale.php");
-        }
-       
-      else{
-          header("location : /connexion.php");
-          }
-        }
-      }
-   /**
-    * Vérifie si l'utilisateur peut se connecter, sinon retour à la page d'acceuil
-    * conseil : utiliser la table $_POST pour les informations transmises par le formulaire
-    * Si la personne est connectée, créer une session
-    */
-   function verify_connexion(){
-
-    if (!isset($_SESSION['ouvert'])) 
-      { 
-
-      header("Location : /connexion.php"); 
-      }
-    }
+      //Si on arrive là c'est que tout est ok, alors on connecte la personne en assignant 
+   
+   }
 
    /**
     * Verifie si l'utilisateur est déjà connecté.
@@ -126,25 +93,42 @@
     */
    function is_loged(){
 
-      
+      //Manière plus courte de l'écrire
+      //C'est un opérateur ternaire, vérifie la validité comme pour un if. Si c'est vrai alors renvoie la premiere partie, sinon la seconde.
+      //C'est compliqué à lire au début mais ca fait gagner en lisibilité de code quand on a l'habitude
+      return isset($_SESSION['ouvert']) ? true : false;
 
-      if (isset($_SESSION['ouvert'])) 
+/*      if (isset($_SESSION['ouvert'])) 
         {
 
-        $log = true;
+          $log = true;
         }
 
         else 
         {
 
-        $log = false;
+          $log = false;
         }
-      }
+      }*/
      
       /* TODO : Si le mec est déjà connecté, log = true sinon log = false : conseil voir cours sur les if */
 
-      return $log;
+      //return $log;
     }
+
+
+  //____________________________________________________________________________
+  /**
+   * Redirection de l'utilisateur vers une page donnée
+   *
+   * @param   String  $destination    Adresse de destination
+   *
+   * @return  void
+   */
+  function redirection($destination){
+      header('location: '.$destination);
+      exit();
+  }
 
 
 
@@ -189,17 +173,51 @@ function bd_protect($bd, $str) {
     return mysqli_real_escape_string($bd, $str);
 }
 
-//____________________________________________________________________________
-/**
- * Redirection de l'utilisateur vers une page donnée
- *
- * @param   String  $destination    Adresse de destination
- *
- * @return  void
- */
-function redirection($destination){
-    header('location: '.$destination);
-    exit();
-}
 
-   ?>
+
+// La fonction de connexion n'est pas appelée dans ta page principale du coup ce code n'est jamais exécuté !
+   function connexion(){
+
+    $identifiant  = Admin;
+    $password     = Admin;
+
+    // empty s'ultilise sur un tableau en entier ex : empty($_POST)
+    // Pour vérifier la présence d'une valeur du tableau en particulier, utilise isset($_POST['connexion'])
+    // Attention toutefois ici connexion n'a pas de majuscule alors que ton bouton dans ton formulaire en as une
+    if (!empty($_POST['connexion'])) {
+
+        $identifiant = $_POST['identifiant'];
+        $password = $_POST['password'];
+        
+
+      if(empty($_POST['identifiant'] || $_POST['password']))
+      {
+        // ici l'écho va se faire sur la page en cours, mais ton message disparait car header fait une redirection sur une autre page
+        // on verra plus tard comment récupérer le message d'erreur
+        echo "Pseudo manquant ou mot de passe manquant !";
+        header("location : /connexion.php");
+        exit();
+      }
+
+      else if (isset($_POST['identifiant']) && isset($_POST['password'])) 
+        {
+        
+          $identifiant === $_POST['identifiant'];
+          $password === $_POST['password'];
+
+
+        // Le session start est à placer au début du code de tes pages. Il sert à récupérer le tableau $_SESSION et maintenir les id de connexion tout au long du parcours de l'utilisateur
+        //session_start();
+         
+          $_SESSION['identifiant'] = $_POST['identifiant'];
+          $_SESSION['password'] = $_POST['password'];
+          $_SESSION['ouvert'] = true;
+          header("location : /page_principale.php");
+        }
+       
+      else{
+          header("location : /connexion.php");
+          }
+        }
+  }
+?>

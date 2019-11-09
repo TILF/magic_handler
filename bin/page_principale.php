@@ -4,11 +4,14 @@
 	include('Fonctions/fonction.php');
 	include('Fonctions/dataBaseAccess.php');
 
-	/* Vérifie si la personne est connectée */
-	if(is_loged()){
+	// Déclaration du début de la session. A implémenter sour toutes les pages. C'est cette fonction qui récupère la table $_SESSION
+	session_start();
 
-	}else{
-		verify_connexion();
+	/* Si la personne n'est pas connectée alors on la connecte 
+		Sinon c'est qu'elle est simplement en train de naviger sur le site et on lui laisse l'accès à la page.
+	*/
+	if(!is_loged()){
+		connexion2();
 	}
 
 
