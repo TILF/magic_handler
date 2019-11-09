@@ -1,8 +1,10 @@
 body{
 	height: 100%;
 	width: 100%;
+	min-height: 900px;
+	min-width: 900px;
 	flex-direction: column;
-	overflow: hidden;
+	overflow: auto;
 	background-image: url(https://image.noelshack.com/fichiers/2019/42/4/1571335374-12-121139-magic-the-gathering-arena.jpg);
 }
 

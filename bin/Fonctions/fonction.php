@@ -31,7 +31,7 @@
 
                   <li><a href=\"#\">Impressions</a>
                         <ul>
-                           <li><a href=\"./askimpress\">Demander une impression</a></li>
+                           <li><a href=\"./impressask\">Demander une impression</a></li>
                            <li><a href=\"./impressOn\">Impressions en cours</a></li>
                            <li><a href=\"./impressH\">Historique des impressions</a></li>
                         </ul>
@@ -67,6 +67,44 @@
       echo "</body></html>";
    }
 
+   function connexion(){
+
+    $identifiant = Admin;
+    $password = Admin;
+
+   if (!empty($_POST['connexion'])) {
+
+        $identifiant = $_POST['identifiant'];
+        $password = $_POST['password'];
+        
+
+      if(empty($_POST['identifiant'] || $_POST['password']))
+      {
+
+        echo "Pseudo manquant ou mot de passe manquant !";
+        header("location : /connexion.php");
+        exit;
+      }
+
+      else if (isset($_POST['identifiant']) && isset($_POST['password'])) 
+        {
+        
+          $identifiant === $_POST['identifiant'];
+          $password === $_POST['password'];
+
+        session_start();
+         
+          $_SESSION['identifiant'] = $_POST['identifiant'];
+          $_SESSION['password'] = $_POST['password'];
+          $_SESSION['ouvert'] = true;
+          header("location : /page_principale.php");
+        }
+       
+      else{
+          header("location : /connexion.php");
+          }
+        }
+      }
    /**
     * Vérifie si l'utilisateur peut se connecter, sinon retour à la page d'acceuil
     * conseil : utiliser la table $_POST pour les informations transmises par le formulaire
@@ -74,7 +112,12 @@
     */
    function verify_connexion(){
 
-   }
+    if (!isset($_SESSION['ouvert'])) 
+      { 
+
+      header("Location : /connexion.php"); 
+      }
+    }
 
    /**
     * Verifie si l'utilisateur est déjà connecté.
@@ -83,12 +126,25 @@
     */
    function is_loged(){
 
-      $log = false;
+      
 
+      if (isset($_SESSION['ouvert'])) 
+        {
+
+        $log = true;
+        }
+
+        else 
+        {
+
+        $log = false;
+        }
+      }
+     
       /* TODO : Si le mec est déjà connecté, log = true sinon log = false : conseil voir cours sur les if */
 
       return $log;
-   }
+    }
 
 
 
@@ -146,6 +202,4 @@ function redirection($destination){
     exit();
 }
 
-   
-?>
-
+   ?>

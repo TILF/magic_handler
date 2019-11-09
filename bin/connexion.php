@@ -37,7 +37,7 @@
 				</div>
 
 				<div class="center form-bloc"> 
-					<button type="submit" class="btn btn-success">Valider</button>
+					<button type="submit" name="Connexion" value= 'Connexion' class="btn btn-success">Valider</button>
 				</div>
 
 				<div class="form-bloc">
