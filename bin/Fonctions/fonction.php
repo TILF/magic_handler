@@ -68,22 +68,22 @@
    }
 
 
-   /* TODO : completer la fonction pour qu'lle fonctionne */
    function connexion2(){
 
       //Etape 1, vérifier que les informations saisies dans le formulaire sont bien présente dans $_POST, sinon il y a erreur et on revient à l'écran de connexion
       //Cette vérification empêche une personne d'accéder à la page en tapant l'adresse URL directement.
-      if()
+      if(!$_POST['identifiant'] || !$_POST['password'])
         redirection('deconnexion.php');
 
       //Sinon, on vérifie que les identifiants soient corrects (pour le moment on dit que c'est 'admin' 'admin')
       // Si ce n'est pas le cas on retourne à la connexion
       // Pour le moment on ne gère pas le message d'erreur
-      if()
+      if(connectByIdPass($_POST['identifiant'], $_POST['password']) === 0)
         redirection('deconnexion.php');
 
       //Si on arrive là c'est que tout est ok, alors on connecte la personne en assignant 
-   
+      $_SESSION['identifiant'] = $_POST['identifiant'];
+
    }
 
    /**
@@ -96,26 +96,9 @@
       //Manière plus courte de l'écrire
       //C'est un opérateur ternaire, vérifie la validité comme pour un if. Si c'est vrai alors renvoie la premiere partie, sinon la seconde.
       //C'est compliqué à lire au début mais ca fait gagner en lisibilité de code quand on a l'habitude
-      return isset($_SESSION['ouvert']) ? true : false;
-
-/*      if (isset($_SESSION['ouvert'])) 
-        {
-
-          $log = true;
-        }
-
-        else 
-        {
-
-          $log = false;
-        }
-      }*/
-     
-      /* TODO : Si le mec est déjà connecté, log = true sinon log = false : conseil voir cours sur les if */
-
-      //return $log;
+      return isset($_SESSION['identifiant']) ? true : false;
     }
-
+    
 
   //____________________________________________________________________________
   /**

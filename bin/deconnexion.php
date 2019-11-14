@@ -1,5 +1,5 @@
 <?php
-require_once 'fonction.php';
+require_once './Fonctions/fonction.php';
 
 isset($_SESSION) && session_unset() && session_destroy();	
 

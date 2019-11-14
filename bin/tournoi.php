@@ -3,13 +3,8 @@
 	include('Fonctions/fonction.php');
 	include('Fonctions/dataBaseAccess.php');
 
-	/* Vérifie si la personne est connectée */
-	if(is_loged()){
-
-	}else{
-		verify_connexion();
-	}
-
+	session_start();
+	is_loged() || redirection('deconnexion.php'); 
 
 	/* Affiche le haut de page*/
 	get_top_page();
