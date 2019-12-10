@@ -167,7 +167,7 @@ function bd_protect($bd, $str) {
     // empty s'ultilise sur un tableau en entier ex : empty($_POST)
     // Pour vérifier la présence d'une valeur du tableau en particulier, utilise isset($_POST['connexion'])
     // Attention toutefois ici connexion n'a pas de majuscule alors que ton bouton dans ton formulaire en as une
-    if (!empty($_POST['connexion'])) {
+    if (isset($_POST['Connexion'])) {
 
         $identifiant = $_POST['identifiant'];
         $password = $_POST['password'];

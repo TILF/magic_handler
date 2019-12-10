@@ -17,7 +17,14 @@
 	 * Sinon Faud id ou mdp
 	 */
 	function connectByIdPass($identifiant, $password){
-		$sql = "";
+		$sql = "SELECT identifiant, password FROM User WHERE identifiant, password LIKE " . $identifiant, $password;
+
+		if (return 1) {
+			connexion2();
+
+		else {
+			echo "Mauvais identifiant ou mot de passe !";
+		}
 	}
 
 	/**
@@ -25,7 +32,9 @@
 	 * @param  [type] $id [description]
 	 */
 	function getidentifiantByID($id){
+		$sql = "SELECT identifiant FROM User WHERE $id[$identifiant]";
 
+		return 1;
 	}
 
 	/**
@@ -33,8 +42,15 @@
 	 * @return [type] [description]
 	 */
 	function getInfosById($id){
+		$sql = "SELECT * FROM User WHERE $id[*]";
 
+		return 1;
 	}
 
+	function viewOrders($identifiant){
+		$sql = "CREATE VIEW imprCards  AS SELECT Cartes, edition, exemplaires FROM Cards WHERE "
+			}
+
+	
 	
 ?>

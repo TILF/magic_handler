@@ -24,7 +24,7 @@
 						<li><a href="#">Mes donn&eacute;es personnelles</a></li>
 						<li><a href="#">Mes param&eacute;tres</a></li>
 						<li><a href="#">Mes messages</a></li>
-						<li><a href="#">D&eacute;connexion</a></li>
+						<li><a href=deconnexion.php">D&eacute;connexion</a></li>
 					</ul>
 				</li>
 		</ul>

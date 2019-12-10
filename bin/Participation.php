@@ -3,6 +3,7 @@
 	include('Fonctions/fonction.php');
 	include('Fonctions/dataBaseAccess.php');
 
+	session_start();
 	/* Vérifie si la personne est connectée */
 	if(is_loged()){
 
@@ -24,7 +25,7 @@
 						<li><a href="#">Mes donn&eacute;es personnelles</a></li>
 						<li><a href="#">Mes param&eacute;tres</a></li>
 						<li><a href="#">Mes messages</a></li>
-						<li><a href="#">D&eacute;connexion</a></li>
+						<li><a href="deconnexion.php">D&eacute;connexion</a></li>
 					</ul>
 				</li>
 		</ul>

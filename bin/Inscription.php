@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +18,7 @@
 			<h1 id="Ins">Inscription</h1>
 		</div>
 
-		<form id="bloc_login">
+		<form id="bloc_login" method="post" form action= Inscr.php>
 
   			<div id="P1" class="form-row">
 
@@ -65,7 +67,7 @@
   			</div>
 
 			<div id=valider>
-				<button class="btn btn-light">S'inscrire</button>
+				<button class="btn btn-light" input type="submit">S'inscrire</button>
 			</div>
 
 		</form>
