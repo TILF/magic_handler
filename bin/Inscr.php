@@ -1,16 +1,30 @@
 <?php
- $sql = "INSERT INTO users(pseudo, passwd, mail, Dnaissance, Adresse, Ville) 
- 			VALUES($_POST['pseudo'], $_POST['passwd'], $_POST['mail'], $_POST['Dnaissance'], $_POST['Adresse'], $_POST['Ville']"
 
- 			if (!isset($_POST['pseudo'] || $_POST['passwd'] || $_POST['mail'] || $_POST['Dnaissance'] || $_POST['Adresse'] || $_POST['Ville'] )) 
- 			{
- 				die()
+	ob_start('ob_gzhandler');
+	session_start();
+	require_once './Fonctions/dataBaseAccess.php';
 
- 				else {
- 					return "Votre isncription est prise en compte !";
- 				}
- 			}
+	//die(print_r($_POST));
 
+	// Vérifier si la personne n'est pas déjà loged, sinon la renvoyer du l'index
+	
+	$bd = bd_connect();
+
+	 $sql = "INSERT INTO users(pseudo, passwd, mail, Dnaissance, Adresse, Ville) 
+ 			VALUES('". $_POST['Pseudo'] ."', '" . $_POST['Passwd'] . "', '" . $_POST['Mail'] . "' , '19910625' , '" . $_POST['adresse'] . "', '" . $_POST['Ville'] . "')";
+
+	if (!isset($_POST['Pseudo']) || !isset($_POST['Passwd']) || !isset($_POST['Mail']) || !isset($_POST['adresse']) || !isset($_POST['Ville'])) 
+	{
+		die('Il manque des infos en POST');
+	}else {
+		$res = mysqli_query($bd, $sql) or bd_erreur($bd, $sql);
+		die("Votre isncription est prise en compte !");
+	}
+
+
+ 	/* Définies mais jamais utilisées ? */ 
+
+ 	/*
  	function inspseudo(){
 
  		$pseudo = isset($_POST["pseudo"]) ? intval($_POST["pseudo"]) : '';
@@ -64,5 +78,7 @@
  	function insVille(){
 
  		$Ville = isset($_POST["Ville"]) ? intval($_POST["Ville"]) : '';
- 		}		
+ 		}	
+
+ 	*/	
 ?>
