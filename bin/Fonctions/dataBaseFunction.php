@@ -32,7 +32,7 @@
 	 * @param  [type] $id [description]
 	 */
 	function getidentifiantByID($id){
-		$sql = "SELECT identifiant FROM User WHERE $id[$identifiant]";
+		$sql = "SELECT identifiant FROM User WHERE id LIKE " . $id;
 
 		return 1;
 	}
@@ -42,15 +42,10 @@
 	 * @return [type] [description]
 	 */
 	function getInfosById($id){
-		$sql = "SELECT * FROM User WHERE $id[*]";
+		$sql = "SELECT * FROM User WHERE id LIKE " . $id;
 
 		return 1;
 	}
 
-	function viewOrders($identifiant){
-		$sql = "CREATE VIEW imprCards  AS SELECT Cartes, edition, exemplaires FROM Cards WHERE "
-			}
-
-	
 	
 ?>

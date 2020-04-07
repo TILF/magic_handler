@@ -3,6 +3,8 @@
 	include('Fonctions/fonction.php');
 	include('Fonctions/dataBaseAccess.php');
 
+	session_start();
+
 	/* Vérifie si la personne est connectée */
 	if(is_loged()){
 
